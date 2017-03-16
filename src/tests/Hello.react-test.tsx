@@ -8,15 +8,15 @@ test('h1 changes class when hovered', () => {
     <Hello compiler="Typescript" framework="React" />
   );
 
-  let tree = component.toJSON();
+  let tree: any = component.toJSON();
   expect(tree).toMatchSnapshot();
 
   tree.props.onMouseEnter();
-
   tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 
   tree.props.onMouseLeave();
   tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+
 });

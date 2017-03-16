@@ -11,11 +11,11 @@ export default class Hello extends React.Component<HelloProps, any> {
     };
   }
 
-  private onMouseEnter = (): void => {
+  private onMouseEnter = (e: any): void => {
     this.setState({class: 'red'});
   }
 
-  private onMouseLeave = (): void => {
+  private onMouseLeave = (e: any): void => {
     this.setState({class: 'black'});
   }
 
