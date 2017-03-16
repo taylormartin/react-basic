@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -90,14 +90,15 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(0);
+var Link_1 = __webpack_require__(4);
 var Hello = (function (_super) {
     __extends(Hello, _super);
     function Hello(props) {
         var _this = _super.call(this, props) || this;
-        _this.onMouseEnter = function () {
+        _this.onMouseEnter = function (e) {
             _this.setState({ class: 'red' });
         };
-        _this.onMouseLeave = function () {
+        _this.onMouseLeave = function (e) {
             _this.setState({ class: 'black' });
         };
         _this.state = {
@@ -106,12 +107,14 @@ var Hello = (function (_super) {
         return _this;
     }
     Hello.prototype.render = function () {
-        return (React.createElement("h1", { onMouseLeave: this.onMouseLeave, onMouseEnter: this.onMouseEnter, className: this.state.class },
-            "Hello from ",
-            this.props.compiler,
-            " and ",
-            this.props.framework,
-            "!"));
+        return (React.createElement("div", null,
+            React.createElement("h1", { onMouseLeave: this.onMouseLeave, onMouseEnter: this.onMouseEnter, className: this.state.class },
+                "Hello from ",
+                this.props.compiler,
+                " and ",
+                this.props.framework,
+                "!"),
+            React.createElement(Link_1.default, null)));
     };
     return Hello;
 }(React.Component));
@@ -125,10 +128,10 @@ exports.default = Hello;
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(4);
+var content = __webpack_require__(5);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(6)(content, {});
+var update = __webpack_require__(7)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -154,7 +157,48 @@ module.exports = ReactDOM;
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(5)();
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(0);
+var Link = (function (_super) {
+    __extends(Link, _super);
+    function Link(props) {
+        var _this = _super.call(this, props) || this;
+        _this.onMouseEnter = function (e) {
+            _this.setState({ text: 'Link Hovering' });
+        };
+        _this.onMouseLeave = function (e) {
+            _this.setState({ text: 'Link' });
+        };
+        _this.state = {
+            text: 'Link'
+        };
+        return _this;
+    }
+    Link.prototype.render = function () {
+        return (React.createElement("a", { href: "#", onMouseEnter: this.onMouseEnter, onMouseLeave: this.onMouseLeave }, this.state.text));
+    };
+    return Link;
+}(React.Component));
+exports.default = Link;
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(6)();
 // imports
 
 
@@ -165,7 +209,7 @@ exports.push([module.i, ".black {\n  color: black; }\n\n.red {\n  color: red; }\
 
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports) {
 
 /*
@@ -221,7 +265,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports) {
 
 /*
@@ -473,7 +517,7 @@ function updateLink(linkElement, obj) {
 
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

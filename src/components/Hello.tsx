@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Link from './Link';
 
 export interface HelloProps { compiler: string; framework: string; }
 
@@ -21,7 +22,10 @@ export default class Hello extends React.Component<HelloProps, any> {
 
   public render() {
     return (
-      <h1 onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter} className={this.state.class}>Hello from {this.props.compiler} and {this.props.framework}!</h1>
+      <div>
+        <h1 onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter} className={this.state.class}>Hello from {this.props.compiler} and {this.props.framework}!</h1>
+        <Link/>
+      </div>
     );
   }
 }
