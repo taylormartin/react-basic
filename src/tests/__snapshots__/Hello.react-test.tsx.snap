@@ -13,13 +13,6 @@ exports[`h1 changes class when hovered 1`] = `
     React
     !
   </h1>
-  <a
-    href="#"
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-  >
-    Link
-  </a>
 </div>
 `;
 

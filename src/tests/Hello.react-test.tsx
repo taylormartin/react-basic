@@ -4,7 +4,7 @@ import Hello from '../components/Hello';
 
 test('h1 changes class when hovered', () => {
 
-  jest.mock('../components/Link', () => 'Link');
+  // jest.mock('../components/Link', () => 'Link');
 
   const component = renderer.create(
     <Hello compiler="Typescript" framework="React" />
