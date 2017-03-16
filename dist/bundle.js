@@ -92,11 +92,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(0);
 var Hello = (function (_super) {
     __extends(Hello, _super);
-    function Hello() {
-        return _super !== null && _super.apply(this, arguments) || this;
+    function Hello(props) {
+        var _this = _super.call(this, props) || this;
+        _this.onMouseEnter = function () {
+            _this.setState({ class: 'red' });
+        };
+        _this.onMouseLeave = function () {
+            _this.setState({ class: 'black' });
+        };
+        _this.state = {
+            class: 'black'
+        };
+        return _this;
     }
     Hello.prototype.render = function () {
-        return (React.createElement("h1", null,
+        return (React.createElement("h1", { onMouseLeave: this.onMouseLeave, onMouseEnter: this.onMouseEnter, className: this.state.class },
             "Hello from ",
             this.props.compiler,
             " and ",
@@ -105,7 +115,7 @@ var Hello = (function (_super) {
     };
     return Hello;
 }(React.Component));
-exports.Hello = Hello;
+exports.default = Hello;
 
 
 /***/ }),
@@ -149,7 +159,7 @@ exports = module.exports = __webpack_require__(5)();
 
 
 // module
-exports.push([module.i, "h1 {\n  color: red; }\n", "", {"version":3,"sources":["/Users/temartin/Desktop/react-basic/src/scss/main.scss"],"names":[],"mappings":"AAEA;EACE,WAHO,EAIR","file":"main.scss","sourcesContent":["$red: red;\n\nh1 {\n  color: $red;\n}"],"sourceRoot":""}]);
+exports.push([module.i, ".black {\n  color: black; }\n\n.red {\n  color: red; }\n", "", {"version":3,"sources":["/Users/temartin/Documents/react-basic/src/scss/main.scss"],"names":[],"mappings":"AAGA;EACE,aAHW,EAIZ;;AAED;EACE,WARO,EASR","file":"main.scss","sourcesContent":["$red: red;\n$black: black;\n\n.black {\n  color: $black;\n}\n\n.red {\n  color: $red;\n}\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -473,7 +483,7 @@ var React = __webpack_require__(0);
 var ReactDOM = __webpack_require__(3);
 __webpack_require__(2);
 var Hello_1 = __webpack_require__(1);
-ReactDOM.render(React.createElement(Hello_1.Hello, { compiler: "Typescript", framework: "React" }), document.getElementById('example'));
+ReactDOM.render(React.createElement(Hello_1.default, { compiler: "Typescript", framework: "React" }), document.getElementById('example'));
 
 
 /***/ })
