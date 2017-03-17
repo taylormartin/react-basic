@@ -1,19 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`h1 changes class when hovered 1`] = `
-<div>
-  <h1
-    className="black"
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-  >
-    Hello from 
-    Typescript
-     and 
-    React
-    !
-  </h1>
-</div>
+<h1
+  className="black"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  Hello from 
+  Typescript
+   and 
+  React
+  !
+</h1>
 `;
 
 exports[`h1 changes class when hovered 2`] = `
