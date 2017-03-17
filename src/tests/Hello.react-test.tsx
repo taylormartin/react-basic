@@ -2,9 +2,9 @@ import * as React from 'react';
 import * as renderer from 'react-test-renderer';
 import Hello from '../components/Hello';
 
-test('h1 changes class when hovered', () => {
+jest.enableAutomock();
 
-  // jest.mock('../components/Link', () => 'Link');
+test('h1 changes class when hovered', () => {
 
   const component = renderer.create(
     <Hello compiler="Typescript" framework="React" />
@@ -12,6 +12,8 @@ test('h1 changes class when hovered', () => {
 
   let tree: any = component.toJSON();
   expect(tree).toMatchSnapshot();
+
+  console.log(tree.props.onMouseEnter());
 
   tree.props.onMouseEnter();
   tree = component.toJSON();

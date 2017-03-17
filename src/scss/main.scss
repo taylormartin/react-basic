@@ -1,5 +1,6 @@
 $red: red;
 $black: black;
+$green: green;
 
 .black {
   color: $black;
@@ -7,4 +8,13 @@ $black: black;
 
 .red {
   color: $red;
+}
+
+.green {
+  color: $green;
+}
+
+button {
+  display: block;
+  margin-bottom: 1rem;
 }

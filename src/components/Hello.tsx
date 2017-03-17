@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Link from './Link';
 
 export interface HelloProps { compiler: string; framework: string; }
 
@@ -7,7 +8,8 @@ export default class Hello extends React.Component<HelloProps, any> {
   constructor(props: HelloProps) {
     super(props);
     this.state = {
-      class: 'black'
+      class: 'black',
+      linkClass: 'black'
     };
   }
 
@@ -19,9 +21,18 @@ export default class Hello extends React.Component<HelloProps, any> {
     this.setState({class: 'black'});
   }
 
+  private toggleLinkColor = (): void => {
+    let color = this.state.linkClass === 'black' ? 'green' : 'black';
+    this.setState({linkClass: color});
+  }
+
   public render() {
     return (
-      <h1 onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter} className={this.state.class}>Hello from {this.props.compiler} and {this.props.framework}!</h1>
+      <div>
+        <h1 onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter} className={this.state.class}>Hello from {this.props.compiler} and {this.props.framework}!</h1>
+        <button onClick={this.toggleLinkColor}>Change Link Color</button>
+        <Link colorClass={this.state.linkClass}/>
+      </div>
     );
   }
   

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export default class Link extends React.Component<any, any> {
+export default class Link extends React.Component<{colorClass: string}, any> {
 
   constructor(props: any) {
     super(props);
@@ -9,17 +9,14 @@ export default class Link extends React.Component<any, any> {
     };
   }
 
-  private onMouseEnter = (e: any): void => {
-    this.setState({text: 'Link Hovering'});
-  }
-
-  private onMouseLeave = (e: any): void => {
-    this.setState({text: 'Link'});
+  toggleText = (): void => {
+    let text = this.state.text === 'Link' ? 'Link Hover' : 'Link';
+    this.setState({text: text});
   }
 
   public render() {
     return (
-      <a href="#" onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>{this.state.text}</a>
+      <a href="#" className={this.props.colorClass} onMouseEnter={this.toggleText} onMouseLeave={this.toggleText}>{this.state.text}</a>
     );
   }
 
