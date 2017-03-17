@@ -106,13 +106,12 @@ var Hello = (function (_super) {
         return _this;
     }
     Hello.prototype.render = function () {
-        return (React.createElement("div", null,
-            React.createElement("h1", { onMouseLeave: this.onMouseLeave, onMouseEnter: this.onMouseEnter, className: this.state.class },
-                "Hello from ",
-                this.props.compiler,
-                " and ",
-                this.props.framework,
-                "!")));
+        return (React.createElement("h1", { onMouseLeave: this.onMouseLeave, onMouseEnter: this.onMouseEnter, className: this.state.class },
+            "Hello from ",
+            this.props.compiler,
+            " and ",
+            this.props.framework,
+            "!"));
     };
     return Hello;
 }(React.Component));
