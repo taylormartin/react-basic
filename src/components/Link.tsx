@@ -16,6 +16,7 @@ export default class Link extends React.Component<{colorClass: string}, any> {
 
   public render() {
     return (
+      <div>that other title</div>
       <a href="#" className={this.props.colorClass} onMouseEnter={this.toggleText} onMouseLeave={this.toggleText}>{this.state.text}</a>
     );
   }
