@@ -33,6 +33,7 @@ export default class Hello extends React.Component<HelloProps, any> {
         <button onClick={this.toggleLinkColor}>Change Link Color</button>
         <Link colorClass={this.state.linkClass}/>
         <div>text</div>
+        <div>more text</div>
       </div>
     );
   }
