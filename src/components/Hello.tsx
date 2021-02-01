@@ -41,6 +41,7 @@ export default class Hello extends React.Component<HelloProps, any> {
         <div>f1</div>
         <div>some text about f1</div>
         <div>f4</div>
+        <div>f5</div>
       </div>
     );
   }
