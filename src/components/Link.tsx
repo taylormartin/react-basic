@@ -20,6 +20,7 @@ export default class Link extends React.Component<{colorClass: string}, any> {
         <div>title</div>
         <div>that other title</div>
         <div>text about f2</div>
+        <div>f7</div>
         <a href="#" className={this.props.colorClass} onMouseEnter={this.toggleText} onMouseLeave={this.toggleText}>{this.state.text}</a>
       </div>
 
