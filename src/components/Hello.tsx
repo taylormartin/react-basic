@@ -32,8 +32,10 @@ export default class Hello extends React.Component<HelloProps, any> {
         <h1 onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter} className={this.state.class}>Hello from {this.props.compiler} and {this.props.framework}!</h1>
         <button onClick={this.toggleLinkColor}>Change Link Color</button>
         <Link colorClass={this.state.linkClass}/>
+        <div>text</div>
+        <div>more text</div>
       </div>
     );
   }
-  
+
 }
