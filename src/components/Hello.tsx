@@ -34,8 +34,11 @@ export default class Hello extends React.Component<HelloProps, any> {
         <Link colorClass={this.state.linkClass}/>
         <div>text</div>
         <div>more text</div>
+        <ul>
+          <li>item one</li>
+          <li>item two</li>
+        </ul>
       </div>
     );
   }
-
 }
