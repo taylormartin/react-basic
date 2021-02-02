@@ -1,6 +1,7 @@
 import * as React from 'react';
 // f9
 // f11
+// f12
 
 export default class Link extends React.Component<{colorClass: string}, any> {
 
