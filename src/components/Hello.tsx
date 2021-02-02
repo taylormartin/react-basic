@@ -24,6 +24,8 @@ export default class Hello extends React.Component<HelloProps, any> {
     this.setState({class: 'black'});
   }
 
+  // f15
+
   private toggleLinkColor = (): void => {
     let color = this.state.linkClass === 'black' ? 'green' : 'black';
     this.setState({linkClass: color});
