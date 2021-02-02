@@ -2,6 +2,7 @@ import * as React from 'react';
 import Link from './Link';
 // f8
 // f10
+// f14
 
 export interface HelloProps { compiler: string; framework: string; }
 
@@ -24,6 +25,8 @@ export default class Hello extends React.Component<HelloProps, any> {
   private onMouseLeave = (): void => {
     this.setState({class: 'black'});
   }
+
+  // f15
 
   private toggleLinkColor = (): void => {
     let color = this.state.linkClass === 'black' ? 'green' : 'black';
